@@ -75,17 +75,17 @@ onBeforeUnmount(() => {
             @click.self="$emit('cancel')"
         >
             <form
-                class="flex w-full max-h-[90vh] flex-col overflow-hidden rounded-lg bg-white shadow-xl"
+                class="flex w-full max-h-[90vh] flex-col overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-900"
                 :class="SIZE_CLASSES[size] ?? SIZE_CLASSES.md"
                 @submit.prevent="$emit('submit')"
             >
-                <div class="flex items-center justify-between border-b border-gray-200 px-5 py-3">
-                    <h2 class="text-base font-semibold text-gray-900">
+                <div class="flex items-center justify-between border-b border-gray-200 px-5 py-3 dark:border-gray-800">
+                    <h2 class="text-base font-semibold text-gray-900 dark:text-gray-100">
                         <slot name="title">{{ title }}</slot>
                     </h2>
                     <button
                         type="button"
-                        class="rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+                        class="rounded-md p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600 dark:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-300"
                         aria-label="Close"
                         @click="$emit('cancel')"
                     >
@@ -97,10 +97,10 @@ onBeforeUnmount(() => {
                     <slot />
                 </div>
 
-                <div class="flex justify-end gap-2 border-t border-gray-200 px-5 py-3">
+                <div class="flex justify-end gap-2 border-t border-gray-200 px-5 py-3 dark:border-gray-800">
                     <button
                         type="button"
-                        class="rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                        class="rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
                         :disabled="processing"
                         @click="$emit('cancel')"
                     >

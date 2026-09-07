@@ -9,16 +9,16 @@ import { useMountedOnClient } from '../../composables/useMountedOnClient'
 // Base/ActionButton.vue's BUTTON_CLASSES, but text-only (a dropdown row,
 // not a solid pill).
 const ITEM_TEXT_CLASSES = {
-    gray: 'text-gray-700',
-    red: 'text-red-600',
-    green: 'text-green-700',
-    blue: 'text-blue-700',
-    yellow: 'text-yellow-700',
-    amber: 'text-amber-700',
-    sky: 'text-sky-700',
-    rose: 'text-rose-700',
-    purple: 'text-purple-700',
-    pink: 'text-pink-700',
+    gray: 'text-gray-700 dark:text-gray-300',
+    red: 'text-red-600 dark:text-red-300',
+    green: 'text-green-700 dark:text-green-300',
+    blue: 'text-blue-700 dark:text-blue-300',
+    yellow: 'text-yellow-700 dark:text-yellow-300',
+    amber: 'text-amber-700 dark:text-amber-300',
+    sky: 'text-sky-700 dark:text-sky-300',
+    rose: 'text-rose-700 dark:text-rose-300',
+    purple: 'text-purple-700 dark:text-purple-300',
+    pink: 'text-pink-700 dark:text-pink-300',
 }
 
 const props = defineProps({
@@ -132,7 +132,7 @@ onBeforeUnmount(() => {
     <button
         ref="triggerEl"
         type="button"
-        class="flex h-7 w-7 items-center justify-center rounded-md text-gray-400 select-none hover:bg-gray-100 hover:text-gray-600"
+        class="flex h-7 w-7 items-center justify-center rounded-md text-gray-400 select-none hover:bg-gray-100 hover:text-gray-600 dark:text-gray-500 dark:hover:bg-gray-700 dark:hover:text-gray-300"
         :aria-label="triggerLabel"
         @click="toggle"
     >
@@ -143,14 +143,14 @@ onBeforeUnmount(() => {
         <div
             v-if="open"
             ref="menuEl"
-            class="z-50 w-44 overflow-hidden rounded-md border border-gray-200 bg-white py-1 shadow-lg"
+            class="z-50 w-44 overflow-hidden rounded-md border border-gray-200 bg-white py-1 shadow-lg dark:border-gray-800 dark:bg-gray-900"
             :style="menuStyle"
         >
             <button
                 v-for="(action, index) in visibleActions()"
                 :key="action.label ?? index"
                 type="button"
-                class="flex w-full items-center gap-2 px-3 py-1.5 text-left text-sm hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
+                class="flex w-full items-center gap-2 px-3 py-1.5 text-left text-sm hover:bg-gray-50 dark:hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
                 :class="ITEM_TEXT_CLASSES[action.color] ?? ITEM_TEXT_CLASSES.gray"
                 :disabled="action.disabled"
                 @click="selectAction(action)"

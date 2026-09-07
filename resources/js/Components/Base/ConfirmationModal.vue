@@ -6,7 +6,7 @@ const isMounted = useMountedOnClient()
 // Static color map — same Tailwind content-scanning rule as every other
 // color prop across Invue (see invue/notifications' Toast.vue).
 const CONFIRM_BUTTON_CLASSES = {
-    gray: 'bg-gray-800 hover:bg-gray-700',
+    gray: 'bg-gray-800 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600',
     red: 'bg-red-600 hover:bg-red-500',
     green: 'bg-green-600 hover:bg-green-500',
     blue: 'bg-blue-600 hover:bg-blue-500',
@@ -61,14 +61,14 @@ defineEmits(['confirm', 'cancel'])
          menu. -->
     <Teleport v-if="isMounted" to="body">
         <div v-if="open" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 text-left" @click.self="$emit('cancel')">
-            <div class="w-full max-w-sm rounded-lg bg-white p-5 shadow-xl">
-                <h2 class="text-base font-semibold text-gray-900">{{ title }}</h2>
-                <p v-if="text" class="mt-1.5 text-sm text-gray-600">{{ text }}</p>
+            <div class="w-full max-w-sm rounded-lg bg-white p-5 shadow-xl dark:bg-gray-900">
+                <h2 class="text-base font-semibold text-gray-900 dark:text-gray-100">{{ title }}</h2>
+                <p v-if="text" class="mt-1.5 text-sm text-gray-600 dark:text-gray-400">{{ text }}</p>
 
                 <div class="mt-5 flex justify-end gap-2">
                     <button
                         type="button"
-                        class="rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                        class="rounded-md border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
                         :disabled="processing"
                         @click="$emit('cancel')"
                     >

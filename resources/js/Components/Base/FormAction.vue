@@ -11,7 +11,7 @@ import FormModal from '../FormModal.vue'
 // content-scanning note), so a shared .js constant would never resolve
 // to a real class here.
 const BUTTON_CLASSES = {
-    gray: 'bg-gray-800 text-white hover:bg-gray-700',
+    gray: 'bg-gray-800 text-white hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600',
     red: 'bg-red-600 text-white hover:bg-red-500',
     green: 'bg-green-600 text-white hover:bg-green-500',
     blue: 'bg-blue-600 text-white hover:bg-blue-500',
@@ -24,16 +24,16 @@ const BUTTON_CLASSES = {
 }
 
 const GHOST_CLASSES = {
-    gray: 'text-gray-500 hover:bg-gray-100 hover:text-gray-700',
-    red: 'text-red-500 hover:bg-red-50 hover:text-red-700',
-    green: 'text-green-600 hover:bg-green-50 hover:text-green-700',
-    blue: 'text-blue-500 hover:bg-blue-50 hover:text-blue-700',
-    yellow: 'text-yellow-600 hover:bg-yellow-50 hover:text-yellow-700',
-    amber: 'text-amber-600 hover:bg-amber-50 hover:text-amber-700',
-    sky: 'text-sky-500 hover:bg-sky-50 hover:text-sky-700',
-    rose: 'text-rose-500 hover:bg-rose-50 hover:text-rose-700',
-    purple: 'text-purple-500 hover:bg-purple-50 hover:text-purple-700',
-    pink: 'text-pink-500 hover:bg-pink-50 hover:text-pink-700',
+    gray: 'text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300',
+    red: 'text-red-500 hover:bg-red-50 hover:text-red-700 dark:text-red-400 dark:hover:bg-red-950 dark:hover:text-red-300',
+    green: 'text-green-600 hover:bg-green-50 hover:text-green-700 dark:text-green-400 dark:hover:bg-green-950 dark:hover:text-green-300',
+    blue: 'text-blue-500 hover:bg-blue-50 hover:text-blue-700 dark:text-blue-400 dark:hover:bg-blue-950 dark:hover:text-blue-300',
+    yellow: 'text-yellow-600 hover:bg-yellow-50 hover:text-yellow-700 dark:text-yellow-400 dark:hover:bg-yellow-950 dark:hover:text-yellow-300',
+    amber: 'text-amber-600 hover:bg-amber-50 hover:text-amber-700 dark:text-amber-400 dark:hover:bg-amber-950 dark:hover:text-amber-300',
+    sky: 'text-sky-500 hover:bg-sky-50 hover:text-sky-700 dark:text-sky-400 dark:hover:bg-sky-950 dark:hover:text-sky-300',
+    rose: 'text-rose-500 hover:bg-rose-50 hover:text-rose-700 dark:text-rose-400 dark:hover:bg-rose-950 dark:hover:text-rose-300',
+    purple: 'text-purple-500 hover:bg-purple-50 hover:text-purple-700 dark:text-purple-400 dark:hover:bg-purple-950 dark:hover:text-purple-300',
+    pink: 'text-pink-500 hover:bg-pink-50 hover:text-pink-700 dark:text-pink-400 dark:hover:bg-pink-950 dark:hover:text-pink-300',
 }
 
 const props = defineProps({
